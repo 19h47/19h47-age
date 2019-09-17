@@ -15,7 +15,7 @@ class Age {
 
 		this.day = 1;
 		this.month = 0;
-		this.year = 2019;
+		this.year = new Date().getFullYear();
 
 		this.date = new Date(this.year, this.month, this.day);
 

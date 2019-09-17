@@ -19,12 +19,12 @@
 					</h1>
 				</div>
 			</div>
-			<div class="Form-group js-birthday margin-top-md-5">
-				<div class="row">
-					<div class="col-12">
-						<h2>Birthday</h2>
-					</div>
+			<div class="row">
+				<div class="col-12">
+					<h2>Birthday</h2>
 				</div>
+			</div>
+			<div class="Form-group js-birthday margin-top-md-5">
 				<div class="row">
 					<div class="col-4">
 						<div class="form-group">
@@ -220,9 +220,25 @@
 				const age = new Age.default(birthdays[i]);
 				age.init();
 
-				birthdays[i].addEventListener('Age.change', (event) => {
-					console.log(event.detail.age);
+				const div = document.createElement('div');
 
+				birthdays[i].addEventListener('Age.change', (event) => {
+					const age = event.detail.age;
+
+					div.className = 'alert alert-danger';
+
+					if (age > 18) {
+						div.className = 'alert alert-success';
+					}
+
+					div.setAttribute('role', 'alert');
+					div.innerHTML = 'You are ' + age + ' year old';
+
+					if (age > 0) {
+						div.innerHTML = 'You are ' + age + ' years old';
+					}
+
+					birthdays[i].parentNode.insertBefore(div, birthdays[i]);
 				});
 			}
 		</script>

@@ -1,9 +1,9 @@
 /**
  * Get age
  *
- * @param  str year
- * @param  str month
- * @param  str day
+ * @param  {number} year
+ * @param  {number} month
+ * @param  {number} day
  * @see https://stackoverflow.com/a/7091639/5091221
  * @return int age
  */

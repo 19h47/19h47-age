@@ -1,3 +1,11 @@
+/**
+ * Is validate
+ *
+ * @param  {number} year  The year.
+ * @param  {number} month The month.
+ * @param  {number} day   The day.
+ * @return {boolean}
+ */
 export default function (year, month, day) {
 	const date = new Date(year, month, day);
 
