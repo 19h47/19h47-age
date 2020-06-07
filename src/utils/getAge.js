@@ -7,7 +7,7 @@
  * @see https://stackoverflow.com/a/7091639/5091221
  * @return int age
  */
-export default function (year, month, day) {
+export default function getAge(year, month, day) {
 	const today = new Date();
 	const birthDate = new Date(year, month, day);
 	let age = today.getFullYear() - birthDate.getFullYear();

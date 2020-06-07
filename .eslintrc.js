@@ -4,10 +4,7 @@ module.exports = {
 		node: true,
 		browser: true,
 	},
-	extends: [
-		'standard',
-		'airbnb-base',
-	],
+	extends: ['standard', 'airbnb-base', 'prettier'],
 	rules: {
 		'no-console': 'off',
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
