@@ -1,5 +1,5 @@
-import isValidate from "./utils/isValidate";
-import getAge from "./utils/getAge";
+import isValidate from './utils/isValidate';
+import getAge from './utils/getAge';
 
 class Age {
 	constructor(element) {
@@ -9,9 +9,9 @@ class Age {
 	init() {
 		if (null === this.$container) return false;
 
-		this.$day = this.$container.querySelector(".js-day");
-		this.$month = this.$container.querySelector(".js-month");
-		this.$year = this.$container.querySelector(".js-year");
+		this.$day = this.$container.querySelector('.js-day');
+		this.$month = this.$container.querySelector('.js-month');
+		this.$year = this.$container.querySelector('.js-year');
 
 		this.day = 1;
 		this.month = 0;
@@ -25,14 +25,14 @@ class Age {
 	}
 
 	initEvents() {
-		this.$day.addEventListener("change", (event) => {
+		this.$day.addEventListener('change', event => {
 			const { target } = event;
 			// 1-31
 			this.day = parseInt(target.options[target.selectedIndex].value, 10);
 			this.validate();
 		});
 
-		this.$month.addEventListener("change", (event) => {
+		this.$month.addEventListener('change', event => {
 			const { target } = event;
 
 			// 0-11
@@ -40,7 +40,7 @@ class Age {
 			this.validate();
 		});
 
-		this.$year.addEventListener("change", (event) => {
+		this.$year.addEventListener('change', event => {
 			const { target } = event;
 
 			this.year = parseInt(target.options[target.selectedIndex].value, 10);
@@ -56,7 +56,7 @@ class Age {
 			return false;
 		}
 
-		const event = new CustomEvent("Age.change", { detail: { age } });
+		const event = new CustomEvent('Age.change', { detail: { age } });
 
 		return this.$container.dispatchEvent(event);
 	}
